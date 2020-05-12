@@ -1,0 +1,524 @@
+{
+    "stages": [
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "hi",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 2000,
+            "pContent": "welcome to",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 500,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "isolation.",
+            "pFontWeight": "Black",
+            "fadeInDuration": 500,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "a place with no mental boundaries",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "and yet the strongest physical boundaries.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "a place where mental strength is stronger than physical.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "the further you reach the more lost you become.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "what are you reaching for?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "connection?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "the feeling of touch?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "an escape?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "the only key to survival here comes from within",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "because the only person here",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "is you.",
+            "pFontWeight": "Black",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "how long will you be here for?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "can you still see what life outside of isolation is like?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "do you remember?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "how do you feel?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "can you still feel?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "who are you?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "where are you?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 2000,
+            "pContent": "you.",
+            "pFontWeight": "Black",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 2000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "when the clouds brew",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 2000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "the nights get longer",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "and the water rises.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "can u swim above it all?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "how long must you swim for?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "how do you find your way back to land?",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "you must be gentle.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "take it slow.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "regather you balance.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "rebuild your confidence.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "one brick at a time.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "build yourself a dam.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 100,
+            "pContent": "hold back the flood gates",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "dark",
+            "delay": 1000,
+            "pContent": "and let the daylight shine through",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "people are still here for you.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "even when you don't feel them.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "be strong.",
+            "pFontWeight": "Black",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "not physically",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "but mentally.",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "the end is still there",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 1000,
+            "pContent": "even when it can't be seen",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "and when the end does come",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "remember this time",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "what true loneliness feels like",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "remember",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "what desperation feels like",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "remember",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 500
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "what being lost feels like",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 3000,
+            "pContent": "remember",
+            "pFontWeight": "Regular",
+            "fadeInDuration": 1000,
+            "fadeOutDuration": 1000
+        },
+        {
+            "isParagraph": true,
+            "isImage": false,
+            "theme": "light",
+            "delay": 100,
+            "pContent": "isolation.",
+            "pFontWeight": "Black",
+            "fadeInDuration": 5000,
+            "fadeOutDuration": 500
+        }
+    ]
+}
