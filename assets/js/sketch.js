@@ -10,11 +10,9 @@ let cnv,
     maximalUpdateDelay = 25,
     updateTimeout,
     dateNow,
-    stageIndex = 0,
-    clicked = false,
     isTiming,
-    timerStart;
-let stages = [];
+    timerStart,
+    stage;
 
 const setup = () => {
     cnv = createCanvas(window.innerWidth, window.innerHeight);
@@ -31,27 +29,17 @@ const setup = () => {
                 canvasSizeChanged = true;
             }, 500);
         }, false);
-        cnv.addEventListener('click', mouseClick, false);
+
+        stage = new Stage(canvasWidth, canvasHeight);
 
         fetch('/assets/json/stages.json')
             .then(response => response.json())
             .then(data => {
                 for (let i = 0; i < data.stages.length; i++) {
-                    let bFadeIn = false;
-                    let bFadeOut = false;
-                    if(i > 0) {
-                        if(data.stages[i-1].theme === "light" && data.stages[i].theme === "dark") {
-                            bFadeIn = true;
-                        }
-                        if(data.stages[i].theme === "dark" && data.stages[i+1].theme === "light") {
-                            bFadeOut = true;
-                        }
-                    }
-                    stages.push(new Stage(data.stages[i].isParagraph, data.stages[i].isImage, data.stages[i].theme, bFadeIn, bFadeOut, data.stages[i].delay, data.stages[i].fadeInDuration, data.stages[i].fadeOutDuration, data.stages[i].pContent, data.stages[i].pFontWeight));
-                    stages[i].setup(canvasWidth, canvasHeight);
+                    stage.pushParagraphs(data.stages[i].theme, data.stages[i].delay, data.stages[i].fadeInDuration, data.stages[i].fadeOutDuration, data.stages[i].content, data.stages[i].fontWeight);
                 }
                 // stageIndex = 32;
-
+                stage.setup();
                 window.requestAnimationFrame(gameLoop);
             });
     } else {
@@ -82,21 +70,7 @@ const update = () => {
     updateTimeout = setTimeout(update, maximalUpdateDelay);
     let delta = -dateNow + (dateNow = Date.now());
 
-    stages[stageIndex].update(canvasWidth, canvasHeight, canvasSizeChanged);
-    if(stages[stageIndex].paragraph.fadedOut) {
-        if(!isTiming) {
-            timerStart = Date.now();
-            isTiming = true;
-        }
-    }
-
-    if(isTiming) {
-        if(Date.now() - timerStart >= stages[stageIndex].delay) {
-            clicked = false;
-            stageIndex++;
-            isTiming = false;
-        }
-    }
+    stage.update(canvasWidth, canvasHeight, canvasSizeChanged);
 };
 
 const draw = () => {
@@ -110,23 +84,12 @@ const draw = () => {
     ctx.fillText('FPS:' + FPS, 50, 50);
 
     // Middle line
-    // ctx.fillStyle = "c9c9c9";
-    // ctx.fillRect(0, canvasHeight/2, canvasWidth, 1);
+    ctx.fillStyle = "c9c9c9";
+    ctx.fillRect(0, canvasHeight/2, canvasWidth, 1);
+    ctx.fillRect(canvasWidth/2, 0, 1, canvasHeight);
 
     // Drawing paragraph class
-    stages[stageIndex].draw();
-};
-
-const nextStage = () => {
-    if(!clicked && stages[stageIndex].paragraph.fadedIn && stageIndex < stages.length - 1) {
-        stages[stageIndex].paragraph.fadeOut = true;
-        stages[stageIndex].background.fadeOut = true;
-        clicked = true;
-    }
-};
-
-const mouseClick = () => {
-    nextStage();
+    stage.draw();
 };
 
 document.body.onload = setup;

@@ -6,4 +6,5 @@ body, html {
 
 canvas { 
     display: block;
+    /* cursor: none; */
 }

@@ -1,11 +1,15 @@
 class Paragraph {
-    constructor(content, fontWeight, theme, fadeInDuration, fadeOutDuration) {
+    constructor(theme, delay, content, fontSize, fontWeight, PosX, PosY, fadeInDuration, fadeOutDuration) {
+        this.theme = theme;
+        this.delay = delay;
         this.content = content; 
-        this.fontSize = 0;
+        this.fontSize = fontSize;
         this.fontWeight = fontWeight;
         this.colour = "rgba(0,0,0,";
         this.alpha = 0;
-        this.theme = theme;
+
+        this.PosX = PosX;
+        this.PosY = PosY;
 
         this.fadeInDuration = fadeInDuration;
         this.fadeOutDuration = fadeOutDuration;
@@ -15,48 +19,14 @@ class Paragraph {
         this.fadedOut = false;
         this.fadeIn = true;
         this.fadeOut = false;
-
-        this.canvasWidth = 0;
-        this.canvasHeight = 0;
     }
 
-    fontCalculation() {
-        if(this.fontWeight === "Black") {
-            ctx.font =  this.fontSize + 'px Roboto-' + this.fontWeight;
-            let text = ctx.measureText(this.content);
-            while(text.width < this.canvasWidth/2 && this.fontSize < this.canvasHeight/2) {
-                ctx.font =  this.fontSize + 'px Roboto-' + this.fontWeight;
-                text = ctx.measureText(this.content);
-                this.fontSize += 1;
-            }
-        } else {
-            if(window.innerWidth > 768) {
-                this.fontSize = this.canvasWidth/30;
-            } else {
-                this.fontSize = this.canvasWidth/25;
-            }
-        }
-    }
-
-    setup(canvasSizeChange) {
+    setup() {
         this.fadeInEffect.setup();
         this.fadeOutEffect.setup();
-
-        if(canvasSizeChange.state) {
-            this.canvasWidth = canvasSizeChange.width;
-            this.canvasHeight = canvasSizeChange.height;
-        }
-
-        this.fontCalculation();
-
-        if(this.theme === "light") {
-            this.colour = "rgba(0,0,0,";
-        } else if (this.theme === "dark") {
-            this.colour = "rgba(255,255,255,";
-        }
     }
     
-    update(canvasSizeChange) {
+    update() {
         if(this.fadeIn && !this.fadeInEffect.completed) {
             this.fadeInEffect.update();
             this.alpha = this.fadeInEffect.alpha;
@@ -77,12 +47,6 @@ class Paragraph {
                 this.fadedIn = false;
             }
         }
-
-        if(canvasSizeChange.state) {
-            this.canvasWidth = canvasSizeChange.width;
-            this.canvasHeight = canvasSizeChange.height;
-            this.fontCalculation();
-        }
     }
 
     draw() {
@@ -90,6 +54,11 @@ class Paragraph {
         ctx.font =  this.fontSize + 'px Roboto-' + this.fontWeight;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(this.content, this.canvasWidth/2, this.canvasHeight/2);
+        ctx.fillText(this.content, this.PosX, this.PosY);
+    }
+
+    updatePos(PosX, PosY) {
+        this.PosX = PosX;
+        this.PosY = PosY;
     }
 }
