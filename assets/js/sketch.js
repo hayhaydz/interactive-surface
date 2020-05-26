@@ -78,15 +78,15 @@ const draw = () => {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     // Displaying current FPS
-    ctx.fillStyle = "#c9c9c9";
-    ctx.textAlign = 'left';
-    ctx.font = '48px Roboto-Regular';
-    ctx.fillText('FPS:' + FPS, 50, 50);
+    // ctx.fillStyle = "#c9c9c9";
+    // ctx.textAlign = 'left';
+    // ctx.font = '48px Roboto-Regular';
+    // ctx.fillText('FPS:' + FPS, 50, 50);
 
     // Middle line
-    ctx.fillStyle = "c9c9c9";
-    ctx.fillRect(0, canvasHeight/2, canvasWidth, 1);
-    ctx.fillRect(canvasWidth/2, 0, 1, canvasHeight);
+    // ctx.fillStyle = "c9c9c9";
+    // ctx.fillRect(0, canvasHeight/2, canvasWidth, 1);
+    // ctx.fillRect(canvasWidth/2, 0, 1, canvasHeight);
 
     // Drawing paragraph class
     stage.draw();
