@@ -9,23 +9,28 @@ class Stage {
         this.playerY = this.canvasHeight/2;
         this.playerColour = "rgb(0,0,0)";
         this.player = new Player(this.playerRadius, this.playerX, this.playerY, this.playerColour);
+        this.playerTheme = "light";
 
         // Square
         this.squareIndex = 0;
         this.squareSize = this.canvasWidth/4;
+        this.previousSquareSize = 0;
+        this.previousSquareDifference = 2;
         this.squares = [];
-        this.squareX = this.canvasWidth/2 - this.squareSize/2;
-        this.squareY = this.canvasHeight/2 - this.squareSize/2;
-        this.squareColour = "rgb(0,0,0)";
-        this.squareBackgroundColour = "rgb(255,255,255)";
-        this.squares[0] = new Square(this.squareSize, this.squareX, this.squareY, this.squareColour, this.squareBackgroundColour);
+        this.squareX = this.canvasWidth/2 - this.canvasWidth/2;
+        this.squareY = this.canvasHeight/2 - this.canvasHeight/2;
+        this.squareColour = "rgba(0, 0, 0, ";
+        this.squareBackgroundColour = "rgba(255, 255, 255, ";
+        this.squares[0] = new Square(this.squareSize, this.canvasWidth, this.squareX, this.squareY, this.squareColour, this.squareBackgroundColour);
 
         // Paragraph
         this.paragraphs = [];
-        this.paragraphIndex = 20;
+        this.paragraphIndex = 0;
         this.changingParagraph = false;
         this.isTiming = false;
         this.timerStart = 0;
+
+        this.finished = false;
     }
 
     setup() {
@@ -40,9 +45,10 @@ class Stage {
             this.canvasWidth = canvasWidth;
             this.canvasHeight = canvasHeight;
             this.paragraphs[this.paragraphIndex].updatePos(this.canvasWidth/2, this.canvasHeight - 100);
+            for (let i = this.squares.length - 1; i >= 0; i--) {
+                this.squares[this.squareIndex].updatePos(this.canvasWidth, this.canvasHeight);                
+            }
         }
-        this.paragraphs[this.paragraphIndex].update();
-        this.player.update(this.squares[this.squareIndex]);
 
         if(this.paragraphs[this.paragraphIndex].fadedOut) {
             if(!this.isTiming) {
@@ -56,49 +62,62 @@ class Stage {
                 this.changingParagraph = false;
                 this.paragraphIndex++;
                 this.isTiming = false;
-                console.log(this.paragraphs[this.paragraphIndex].theme);
-                if(this.paragraphs[this.paragraphIndex].theme === "dark") {
-                    this.nextParagraph();
+                if(this.paragraphs[this.paragraphIndex].theme === "light") {
+                    this.squares[this.squareIndex].backgroundColour = this.squareBackgroundColour;
+                    this.squares[this.squareIndex].colour = this.squareColour;
+                    this.playerTheme = "light";
+                    if(this.paragraphIndex >= 36) {
+                        this.player.damage -= 1;
+                    }
                 }
             }
         }
 
-        if(this.paragraphs[this.paragraphIndex].theme === "light") {
-            this.player.colour = "rgb(0, 0, 0)";
-        } else {
-            this.player.colour = "rgb(255, 255, 255)";
+        if(this.paragraphs[this.paragraphIndex].theme === "dark" && !this.changingParagraph && this.paragraphs[this.paragraphIndex].fadedIn) {
+            this.nextParagraph();
         }
 
-        if(this.paragraphs[this.paragraphIndex].theme === "light") {
-            this.squares[this.squareIndex].update();
-            if(this.squareIndex >= 1 ) {
-                this.squares[this.squareIndex - 1].update();
+        if(this.paragraphIndex < this.paragraphs.length - 1) {
+            for (let i = this.squares.length - 1; i >= 0; i--) {
+                if(this.squares[i].size < 15) {
+                    this.squares.splice(i, 1);
+                    this.squareIndex--;
+                }
+                this.squares[i].update(this.canvasWidth, this.canvasHeight);
             }
-
-            if(this.squares[this.squareIndex].broken && !this.isTiming) {
+            if(this.squares[this.squareIndex].broken) {
                 this.squares[this.squareIndex].broken = false;
-                if(this.paragraphs[this.paragraphIndex + 1].theme === "light") {
-                    this.squares.push(new Square(this.squareSize, this.squareX, this.squareY, this.squareColour, this.squareBackgroundColour));
-                } else if (this.paragraphs[this.paragraphIndex + 1].theme === "dark") {
-                    this.squares.push(new Square(this.squareSize, this.squareX, this.squareY, this.squareBackgroundColour, this.squareColour));
+                if(this.squares.length > 1) {
+                    this.previousSquareSize = this.squareSize;
+                    for (let i = this.squares.length - 1; i >= 0; i--) {
+                        this.squares[i].reset(this.previousSquareSize/this.previousSquareDifference, this.squares[i].size);
+                        this.previousSquareSize = this.previousSquareSize/this.previousSquareDifference;
+                    }
+                } else {
+                    this.squares[this.squareIndex].reset(this.squareSize/this.previousSquareDifference, this.squareSize);
                 }
-                this.squares[this.squareIndex].size = this.canvasWidth/12;
-                this.squares[this.squareIndex].width = this.canvasWidth/12;
-                this.squares[this.squareIndex].height = this.canvasWidth/12;
-                this.squares[this.squareIndex].posX = this.canvasWidth/2 - this.squares[this.squareIndex].width/2;
-                this.squares[this.squareIndex].posY = this.canvasHeight/2 - this.squares[this.squareIndex].height/2;
+                if(this.paragraphs[this.paragraphIndex + 1].theme === "light") {
+                    this.playerTheme = "light";
+                    this.squares.push(new Square(this.squareSize, this.canvasWidth, this.squareX, this.squareY, this.squareColour, this.squareBackgroundColour));
+                } else if (this.paragraphs[this.paragraphIndex + 1].theme === "dark") {
+                    this.playerTheme = "dark";
+                    this.squares.push(new Square(this.squareSize, this.canvasWidth, this.squareX, this.squareY, this.squareBackgroundColour, this.squareColour));
+                }
                 this.squareIndex++;
                 this.squares[this.squareIndex].setup();
                 this.nextParagraph();
             }
-
+        } else {
+            this.finished = true;
         }
+
+        this.paragraphs[this.paragraphIndex].update();
+        this.player.update(this.squares, this.squareIndex, this.finished, this.playerTheme);
     }
 
     draw() {
-        this.squares[this.squareIndex].draw();
-        if(this.squareIndex >= 1) {
-            this.squares[this.squareIndex-1].draw();
+        for (let i = this.squares.length - 1; i >= 0; i--) {
+            this.squares[i].draw();
         }
         this.player.draw();
         this.paragraphs[this.paragraphIndex].draw();
@@ -109,7 +128,7 @@ class Stage {
     }
 
     nextParagraph() {
-        if(!this.changingParagraph && this.paragraphs[this.paragraphIndex].fadedIn && this.paragraphIndex < this.paragraphs.length - 1) {
+        if(this.paragraphIndex < this.paragraphs.length - 1) {
             this.paragraphs[this.paragraphIndex].fadeOut = true;
             this.changingParagraph = true;
         }
