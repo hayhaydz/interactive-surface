@@ -50,7 +50,7 @@ class Stage {
             }
         }
 
-        if(this.paragraphs[this.paragraphIndex].fadedOut) {
+        if(this.paragraphs[this.paragraphIndex].fadedOut && this.paragraphIndex < this.paragraphs.length - 1) {
             if(!this.isTiming) {
                 this.timerStart = Date.now();
                 this.isTiming = true;
@@ -77,14 +77,16 @@ class Stage {
             this.nextParagraph();
         }
 
-        if(this.paragraphIndex < this.paragraphs.length - 1) {
-            for (let i = this.squares.length - 1; i >= 0; i--) {
-                if(this.squares[i].size < 15) {
-                    this.squares.splice(i, 1);
-                    this.squareIndex--;
-                }
+        for (let i = this.squares.length - 1; i >= 0; i--) {
+            if(this.squares[i].size < 15) {
+                this.squares.splice(i, 1);
+                this.squareIndex--;
+            }
+            if(this.squares[i] !== undefined) {
                 this.squares[i].update(this.canvasWidth, this.canvasHeight);
             }
+        }
+        if(this.paragraphIndex < this.paragraphs.length - 1) {
             if(this.squares[this.squareIndex].broken) {
                 this.squares[this.squareIndex].broken = false;
                 if(this.squares.length > 1) {
@@ -108,7 +110,18 @@ class Stage {
                 this.nextParagraph();
             }
         } else {
-            this.finished = true;
+            if(this.squares[this.squareIndex] !== undefined) {
+                if(this.squares[this.squareIndex].broken) {
+                    if(!this.paragraphs[this.paragraphIndex].fadeOut) {
+                        for (let i = this.squares.length - 1; i >= 0; i--) {
+                            this.squares[i].duration = 1000;
+                            this.squares[i].reset(0, this.squares[i].size);
+                        }
+                        this.finished = true;
+                        this.paragraphs[this.paragraphIndex].fadeOut = true;
+                    }
+                }
+            }
         }
 
         this.paragraphs[this.paragraphIndex].update();

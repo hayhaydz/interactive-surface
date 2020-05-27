@@ -66,6 +66,7 @@ class Square {
             if(this.borders[i].health <= 0) {
                 this.borders[i].colour = this.backgroundColour;
                 this.borders[i].opacity = 0;
+                this.borders[i].health = 0;
                 this.broken = true;
             }
         }

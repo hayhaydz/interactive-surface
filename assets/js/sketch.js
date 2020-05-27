@@ -10,8 +10,6 @@ let cnv,
     maximalUpdateDelay = 25,
     updateTimeout,
     dateNow,
-    isTiming,
-    timerStart,
     stage;
 
 const setup = () => {
